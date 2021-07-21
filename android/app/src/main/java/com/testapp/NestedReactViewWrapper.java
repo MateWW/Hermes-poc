@@ -29,7 +29,7 @@ public class NestedReactViewWrapper extends FrameLayout {
 //                .setJSBundleFile("assets://test.js") // console log
                 .setJSMainModulePath("index")
                 .addPackages(packages)
-                .setInitialLifecycleState(LifecycleState.RESUMED)
+                .setInitialLifecycleState(LifecycleState.BEFORE_CREATE)
                 .build();
     }
 

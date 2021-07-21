@@ -36,7 +36,10 @@ const App = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
-        <NestedReactView miniapp />
+        <NestedReactView
+          miniapp
+          style={{width: '100%', height: 100, backgroundColor: 'red'}}
+        />
       </ScrollView>
     </SafeAreaView>
   );
