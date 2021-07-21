@@ -24,9 +24,9 @@ public class NestedReactViewWrapper extends FrameLayout {
         manager = ReactInstanceManager.builder()
                 .setApplication(application)
                 .setCurrentActivity(activity)
-//                .setJSBundleFile("assets://hermes_main.jsbundle") // hermes bytecode
+                .setJSBundleFile("assets://hermes_main.jsbundle") // hermes bytecode
 //                .setJSBundleFile("assets://main.jsbundle") // minified js
-                .setJSBundleFile("assets://test.js")
+//                .setJSBundleFile("assets://test.js") // console log
                 .setJSMainModulePath("index")
                 .addPackages(packages)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
@@ -34,7 +34,8 @@ public class NestedReactViewWrapper extends FrameLayout {
     }
 
     public void setupMiniApp() {
-        NestedReactView miniApp = new NestedReactView(mContext);
+        Activity activity = mContext.getCurrentActivity();
+        NestedReactView miniApp = new NestedReactView(activity);
         this.addView(miniApp);
         miniApp.startReactApplication(manager, "MiniApp");
     }
